@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BABYJONS</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            padding: 60px 20px;
+        }
+
+        header { 
+            margin-bottom: 60px; 
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Відступ між аватаркою та текстом */
+        }
+
+        .header-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%; /* Робить аватарку круглою */
+            object-fit: cover;
+            border: 2px solid #a855f7;
+        }
+
+        .header-text h1 { 
+            font-size: 22px; 
+            letter-spacing: 6px; 
+            text-transform: uppercase; 
+            color: #a855f7;
+            margin: 0;
+        }
+
+        .subtitle { font-size: 12px; color: #444; margin-top: 5px; }
+
+        section { margin-bottom: 50px; }
+
+        h2 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+        }
+
+        /* Roster */
+        .roster {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 20px;
+        }
+
+        .player { text-align: left; }
+
+        .photo {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-color: #1a1a1a;
+            object-fit: cover;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .name { font-size: 15px; font-weight: 500; }
+        .pos { font-size: 10px; color: #555; text-transform: uppercase; }
+
+        /* Achievements */
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .achievements-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .achievements-list li::before {
+            content: "•";
+            color: #a855f7;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        footer { 
+            margin-top: 60px; 
+            padding-top: 20px;
+            border-top: 1px solid #1a1a1a;
+            color: #333; 
+            font-size: 10px; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="babyjonphotkachotka.jpg" alt="Logo" class="header-logo">
+        <div class="header-text">
+            <h1>BABYJONS</h1>
+            <div class="subtitle"></div>
+        </div>
+    </header>
+
+    <section>
+        <h2>Active Roster</h2>
+        <div class="roster">
+            <div class="player">
+                <img src="babyjonphotkachotka.jpg" alt="Andrey" class="photo">
+                <div class="pos">Pos 1</div>
+                <div class="name">Andrey</div>
+            </div>
+            <div class="player">
+                <img src="babyjonphotkachotka.jpg" alt="wairo" class="photo">
+                <div class="pos">Pos 2</div>
+                <div class="name">wairo</div>
+            </div>
+            <div class="player">
+                <img src="babyjonphotkachotka.jpg" alt="Zeng" class="photo">
+                <div class="pos">Pos 3</div>
+                <div class="name">Zeng</div>
+            </div>
+            <div class="player">
+                <img src="babyjonphotkachotka.jpg" alt="Redagon" class="photo">
+                <div class="pos">Pos 4</div>
+                <div class="name">Redagon</div>
+            </div>
+            <div class="player">
+                <img src="babyjonphotkachotka.jpg" alt="MavinML" class="photo">
+                <div class="pos">Pos 5</div>
+                <div class="name">MavinML</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Achievements</h2>
+        <ul class="achievements-list">
+            <li>1 місце - The техніКАЛ турнамент</li>
+            <li>колбаса з сиром</li>
+            <li>мікроволновка</li>
+        </ul>
+    </section>
+
+    <footer>
+        &copy; 2026 BABYJONS
+    </footer>
+</div>
+
+</body>
+</html>
