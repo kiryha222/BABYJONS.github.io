@@ -1,0 +1,122 @@
+/* Базовые настройки */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a; /* Глубокий черный */
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    padding: 60px 20px;
+}
+
+/* Шапка с логотипом */
+header { 
+    margin-bottom: 60px; 
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* Круглое лого */
+    object-fit: cover;
+    border: 2px solid #a855f7; /* Фіолетовий обідок */
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+}
+
+.header-text h1 { 
+    font-size: 24px; 
+    letter-spacing: 6px; 
+    text-transform: uppercase; 
+    color: #a855f7;
+    margin: 0;
+}
+
+.subtitle { 
+    font-size: 13px; 
+    color: #555; 
+    margin-top: 5px; 
+    letter-spacing: 1px;
+}
+
+/* Секции */
+section { margin-bottom: 50px; }
+
+h2 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #444;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 8px;
+    margin-bottom: 30px;
+}
+
+/* Ростер (Игроки) */
+.roster {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 25px;
+}
+
+.player { 
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.player:hover {
+    transform: translateY(-5px);
+}
+
+.photo {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: #151515;
+    object-fit: cover;
+    margin-bottom: 12px;
+    display: block;
+    border-radius: 4px;
+    filter: grayscale(30%); /* Легкий эффект стилизации */
+}
+
+.player:hover .photo {
+    filter: grayscale(0%);
+}
+
+.name { font-size: 16px; font-weight: 600; color: #fff; }
+.pos { font-size: 10px; color: #a855f7; text-transform: uppercase; font-weight: bold; margin-bottom: 4px; display: block;}
+
+/* Достижения */
+.achievements-list {
+    list-style: none;
+    padding: 0;
+}
+
+.achievements-list li {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: #111;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #ddd;
+    border-left: 3px solid #a855f7;
+}
+
+/* Футер */
+footer { 
+    margin-top: 80px; 
+    padding-top: 20px;
+    border-top: 1px solid #1a1a1a;
+    color: #333; 
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+}
