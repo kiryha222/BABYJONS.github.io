@@ -44,16 +44,6 @@
             margin: 0;
         }
 
-        /* ОНОВЛЕНИЙ СТИЛЬ СУБТИТРУ */
-        .subtitle { 
-            font-size: 15px; /* Збільшено розмір */
-            color: #b982ee;  /* Більш яскравий колір */
-            margin-top: 8px; 
-            letter-spacing: 0.5px;
-            font-weight: 500;
-            text-shadow: 0 0 10px rgba(168, 85, 247, 0.4); /* Легке сяйво */
-        }
-
         section { margin-bottom: 50px; }
 
         h2 {
@@ -108,6 +98,15 @@
             line-height: 1.4;
         }
 
+        /* КАРТИНКА БЕЗ РАМКИ ТА ФОНУ */
+        .achievement-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            margin-top: 20px;
+            display: block;
+        }
+
         footer { 
             margin-top: 80px; 
             border-top: 1px solid #1a1a1a; 
@@ -123,10 +122,9 @@
 
 <div class="container">
     <header>
-        <img src="babyjonphotkachotka.jpg" alt="BABYJONS Logo" class="header-logo">
+        <img src="babyjonphotkachotka.jpg" class="header-logo">
         <div class="header-text">
             <h1>BABYJONS</h1>
-            <div class="subtitle">Перспективна команда молодих талантів шукає спонсорів</div>
         </div>
     </header>
 
@@ -134,27 +132,27 @@
         <h2>Active Roster</h2>
         <div class="roster">
             <div class="player">
-                <img src="babyjonphotkachotka.jpg" alt="Andrey" class="photo">
+                <img src="babyjonphotkachotka.jpg" class="photo">
                 <span class="pos">Pos 1</span>
                 <div class="name">Андрюха</div>
             </div>
             <div class="player">
-                <img src="babyjonphotkachotka.jpg" alt="wairo" class="photo">
+                <img src="babyjonphotkachotka.jpg" class="photo">
                 <span class="pos">Pos 2</span>
                 <div class="name">wairo</div>
             </div>
             <div class="player">
-                <img src="babyjonphotkachotka.jpg" alt="Zeng" class="photo">
+                <img src="babyjonphotkachotka.jpg" class="photo">
                 <span class="pos">Pos 3</span>
                 <div class="name">Zeng</div>
             </div>
             <div class="player">
-                <img src="babyjonphotkachotka.jpg" alt="Redagon" class="photo">
+                <img src="babyjonphotkachotka.jpg" class="photo">
                 <span class="pos">Pos 4</span>
                 <div class="name">Redagon</div>
             </div>
             <div class="player">
-                <img src="babyjonphotkachotka.jpg" alt="MavinML" class="photo">
+                <img src="babyjonphotkachotka.jpg" class="photo">
                 <span class="pos">Pos 5</span>
                 <div class="name">MavinML</div>
             </div>
@@ -168,6 +166,7 @@
             <li>Колбаса з сиром</li>
             <li>Мікроволновка</li>
         </ul>
+        <img src="konskazalypa.png" class="achievement-image">
     </section>
 
     <footer>
