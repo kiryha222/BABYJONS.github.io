@@ -1,128 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BABYJONS | Official Website</title>
     <style>
+        :root {
+            --primary: #a855f7;
+            --accent: #00f2ff;
+            --bg: #050505;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text: #e0e0e0;
+        }
+
         body {
             margin: 0;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            display: flex;
-            justify-content: center;
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 242, 255, 0.1) 0%, transparent 40%);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
         }
 
         .container {
-            width: 100%;
-            max-width: 700px;
-            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        header { 
-            margin-bottom: 60px; 
+        /* Header Section */
+        header {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 20px;
+            text-align: center;
+            padding: 60px 0;
+            position: relative;
         }
 
         .header-logo {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #a855f7;
-            background-color: #1a1a1a;
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            transform: rotate(-5deg);
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
         }
 
-        .header-text h1 { 
-            font-size: 24px; 
-            letter-spacing: 6px; 
-            text-transform: uppercase; 
-            color: #a855f7;
+        .header-logo:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .header-text h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
             margin: 0;
+            letter-spacing: -2px;
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
         }
 
-        .subtitle { 
-            font-size: 15px; 
-            color: #b982ee;  
-            margin-top: 8px; 
-            letter-spacing: 0.5px;
-            font-weight: 500;
-            text-shadow: 0 0 10px rgba(168, 85, 247, 0.4); 
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-top: 10px;
+            text-transform: uppercase;
         }
 
-        section { margin-bottom: 50px; }
+        /* Roster Section */
+        section {
+            margin-top: 80px;
+        }
 
         h2 {
-            font-size: 11px;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: #666;
-            border-bottom: 1px solid #1a1a1a;
-            padding-bottom: 8px;
-            margin-bottom: 25px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h2::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: linear-gradient(to right, #333, transparent);
         }
 
         .roster {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
         }
 
-        .player { text-align: left; }
+        .player {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .player:hover {
+            background: rgba(168, 85, 247, 0.08);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
 
         .photo {
             width: 100%;
             aspect-ratio: 1/1;
-            background-color: #1a1a1a;
+            border-radius: 12px;
             object-fit: cover;
-            margin-bottom: 12px;
-            display: block;
-            border-radius: 2px;
+            margin-bottom: 15px;
+            filter: grayscale(40%);
+            transition: 0.3s;
         }
 
-        .name { font-size: 16px; font-weight: 500; color: #eee; }
-        .pos { 
-            font-size: 10px; 
-            color: #a855f7; 
-            text-transform: uppercase; 
-            margin-bottom: 4px; 
+        .player:hover .photo {
+            filter: grayscale(0%);
+        }
+
+        .pos {
+            font-size: 0.7rem;
+            color: var(--accent);
+            font-weight: 800;
+            text-transform: uppercase;
             display: block;
-            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            word-wrap: break-word;
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
         }
 
         .achievements-list {
             list-style: none;
             padding: 0;
-            font-size: 14px;
-            color: #ccc;
         }
 
         .achievements-list li {
-            margin-bottom: 12px;
-            padding-left: 15px;
-            border-left: 2px solid #a855f7;
-            line-height: 1.4;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            font-weight: 500;
         }
 
         .achievement-image {
             width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            margin-top: 20px;
-            display: block;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        footer { 
-            margin-top: 80px; 
-            border-top: 1px solid #1a1a1a; 
-            padding-top: 20px; 
-            color: #333; 
-            font-size: 10px;
+        /* Footer */
+        footer {
+            margin-top: 100px;
+            padding: 40px 0;
             text-align: center;
-            letter-spacing: 1px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.8rem;
+            color: #444;
+            letter-spacing: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-text h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -130,7 +206,7 @@
 
 <div class="container">
     <header>
-        <img src="babyjonphotkachotka.jpg" class="header-logo">
+        <img src="babyjonphotkachotka.jpg" class="header-logo" alt="Logo">
         <div class="header-text">
             <h1>BABYJONS</h1>
             <div class="subtitle">Перспективна команда молодих талантів</div>
@@ -170,16 +246,18 @@
 
     <section>
         <h2>Achievements</h2>
-        <ul class="achievements-list">
-            <li>1 місце - The техніКАЛ турнамент</li>
-            <li>Колбаса з сиром</li>
-            <li>Мікроволновка</li>
-        </ul>
-        <img src="konskazalypa.png" class="achievement-image">
+        <div class="achievements-grid">
+            <ul class="achievements-list">
+                <li>1 місце - The техніКАЛ турнамент</li>
+                <li>Колбаса з сиром</li>
+                <li>Мікроволновка</li>
+            </ul>
+            <img src="konskazalypa.png" class="achievement-image">
+        </div>
     </section>
 
     <footer>
-        &copy; 2026 BABYJONS
+        &copy; 2026 BABYJONS — ESTABLISHED FOR GLORY
     </footer>
 </div>
 
